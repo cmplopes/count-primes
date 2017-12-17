@@ -3,24 +3,26 @@
 These benchmarks compare performance characteristics of different programming languages.
 In each language I implemented exactly the same algorithm that counts the number of primes between 0 and 20000000.
 
-The results are:
-003.9s C#
-004.0s C
-004.3s C++
-004.3s Fortran
-004.6s Java
-004.7s Scala
-005.7s JavaScript
-013.3s Julia
-013.4s Go
-014.3s FreePascal
-014.8s Swift
-019.0s Rust
-020.1s Haskell
-052.4s PHP
-064.0s Ruby
-128.0s Python
-148.0s Lua
-177.0s Perl
-214.0s Tcl
-402.0s R
+# The results are:
+| Language | Time (s) |
+|----------|----------|
+|C#        |3.9       |
+|C         |3.95      |
+|C++       |4.3       |
+|Fortran   |4.3       |
+|Java      |4.6       |
+|Scala     |4.7       |
+|JavaScript|5.7       |
+|Julia     |13.3      | 
+|Go        |13.4      |
+|FreePascal|14.3      |
+|Swift     |14.8      |
+|Rust      |19        |
+|Haskell   |20.1      |
+|PHP       |52.4      |
+|Ruby      |64        |
+|Python    |128       |
+|Lua       |148       |
+|Perl      |177       |
+|Tcl       |214       |
+|R         |402       |
