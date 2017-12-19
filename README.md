@@ -10,6 +10,7 @@ In each language I implemented exactly the same algorithm that counts the number
 |C         |3.95      |
 |C++       |4.3       |
 |Fortran   |4.3       |
+|Delphi    |4.4       |
 |Java      |4.6       |
 |Scala     |4.7       |
 |JavaScript|5.7       |
