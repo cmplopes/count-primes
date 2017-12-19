@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
-namespace dockerizecsharp
+namespace primes
 {
-	class MainClass
+	class Program
 	{
-		public static void Main (string[] args)
+		static void Main (string[] args)
 		{
 			Console.WriteLine ("C#");
 			int minprime = 0, maxprime = 20000000, num, count = 0;
@@ -28,4 +28,3 @@ namespace dockerizecsharp
 		
 	}
 }
-
