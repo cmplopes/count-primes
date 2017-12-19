@@ -1,5 +1,7 @@
 program pimes;
 
+{$AppType CONSOLE}
+
 uses SysUtils, DateUtils;
 
 function isPrime(num: Longint): boolean;
