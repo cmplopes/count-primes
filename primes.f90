@@ -1,82 +1,85 @@
-program primos
+program primes
 
     use ISO_FORTRAN_ENV
 
     implicit none
-    integer(int32) :: minprime = 0
-    integer(int32) :: maxprime = 20000000
+    integer(int32) :: minNumber = 0
+    integer(int32) :: maxNumber = 20000000
 
-    call primes(minprime, maxprime)
+    call countPrimes(minNumber, maxNumber)
 
     return
 
 contains
 
-    function isPrime(num) result(ok)
+    function isNumberPrime(number) result(isPrime)
        use ISO_FORTRAN_ENV
        implicit none
-       integer(int32), intent(in) :: num
+       integer(int32), intent(in) :: number
        integer(int32) :: c
-       logical :: ok
+       logical :: isPrime
 
-        if (num <= 1) then
-            ok = .false.
-        else if (num <= 3) then
-            ok = .true.
-        else if (( mod(num, 2) == 0) .or. (mod(num, 3) == 0)) then
-            ok = .false.
+        if (number <= 1) then
+            isPrime = .false.
+        else if (number <= 3) then
+            isPrime = .true.
+        else if (( mod(number, 2) == 0) .or. (mod(number, 3) == 0)) then
+            isPrime = .false.
         else
             c = 5
-            do while (c*c <= num)
-                if ( (mod(num, c) == 0) .or. (mod(num, c+2) == 0) ) then
-                    ok = .false.
+            do while (c*c <= number)
+                if ( (mod(number, c) == 0) .or. (mod(number, c+2) == 0) ) then
+                    isPrime = .false.
                     return
                 end if
                 c = c + 6
             end do
-            ok = .true.
+            isPrime = .true.
         end if
-    end function isPrime
+    end function isNumberPrime
 
-    function delta_time(tTime1, tTime2) result(rTime)
+    function deltaTimeSeconds(startTime, endTime) result(deltaTime)
         use ISO_FORTRAN_ENV
         implicit none
-        integer(int32), dimension(8), intent(in) :: tTime1, tTime2
-        real(real32) :: rTime, rTime1, rTime2
+        integer(int32), dimension(8), intent(in) :: startTime, endTime
+        real(real32) :: deltaTime, rstartTime, rendTime
 
-        rTime1 = (tTime1(5)) * 60. ! Hours to minutes
-        rTime1 = (rTime1 + tTime1(6)) * 60. ! Minutes to seconds
-        rTime1 = (rTime1 + tTime1(7)) * 1e3 ! Seconds to milliseconds
-        rTime1 = rTime1 + tTime1(8) ! Add milliseconds
-        rTime2 = (tTime2(5)) * 60. ! Hours to minutes
-        rTime2 = (rTime2 + tTime2(6)) * 60. ! Minutes to seconds
-        rTime2 = (rTime2 + tTime2(7)) * 1e3 ! Seconds to milliseconds
-        rTime2 = rTime2 + tTime2(8) ! Add milliseconds
-        rTime = (rtime2 - rtime1)/1000.
-    end function delta_time
+        rstartTime = (startTime(5)) * 60.0 ! Hours to minutes
+        rstartTime = (rstartTime + startTime(6)) * 60.0 ! Minutes to seconds
+        rstartTime = (rstartTime + startTime(7)) * 1e3 ! Seconds to milliseconds
+        rstartTime = rstartTime + startTime(8) ! Add milliseconds
+        rendTime = (endTime(5)) * 60.0 ! Hours to minutes
+        rendTime = (rendTime + endTime(6)) * 60.0 ! Minutes to seconds
+        rendTime = (rendTime + endTime(7)) * 1e3 ! Seconds to milliseconds
+        rendTime = rendTime + endTime(8) ! Add milliseconds
+        deltaTime = (rendTime - rstartTime)/1000.0
+    end function deltaTimeSeconds
 
-    subroutine primes(minprime, maxprime)
+    subroutine countPrimes(minNumber, maxNumber)
         use ISO_FORTRAN_ENV
 
         implicit none
-        integer(int32), intent(in) :: minprime, maxprime
-        integer(int32) :: i, cont = 0
-        integer(int32), dimension(8) :: tstart, tend
+        integer(int32), intent(in) :: minNumber, maxNumber
+        integer(int32) :: currentNum, primesCount
+        integer(int32), dimension(8) :: startTime, endTime
 
-        cont = 0
         print *, 'Fortran 6'
+        print *, 'Checking primes between ', minNumber, ' and ', maxNumber
 
-        print *, 'Primes between ', minprime, ' and ', maxprime
-        call date_and_time(values = tstart)
-        do i = minprime, maxprime
-            if (isPrime(i)) cont = cont + 1
+        call date_and_time(values = startTime)
+
+        primesCount = 0
+        do currentNum = minNumber, maxNumber
+            if (isNumberPrime(currentNum)) primesCount = primesCount + 1
         end do
-        call date_and_time(values = tend)
 
-        print *, 'SingleThread ', cont, delta_time(tstart, tend)
+        call date_and_time(values = endTime)
+
+        print *, 'SingleThread : Found ', primesCount, &
+                ' primes in ', deltaTimeSeconds(startTime, endTime), 's'
         print *
 
         return
-    end subroutine primes
+    end subroutine countPrimes
 
-end program primos
+end program primes
