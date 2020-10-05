@@ -1,14 +1,14 @@
-﻿let isPrime n =
+let isPrime n =
     if (n <= 1) then false
     elif (n<= 3) then true
     elif (((n % 2) = 0) || ((n % 3) = 0)) then false
     else
-        let mutable i = 5
-        let mutable ret = true
-        while (ret &&  i*i <= n) do
-            if (((n % i) = 0) || ((n % (i+2)) = 0)) then ret <- false
-            i <- i + 6
-        ret
+        let rec checkPrime i = 
+            if i*i > n then true
+            else
+                if (((n % i) = 0) || ((n % (i+2)) = 0)) then false
+                else checkPrime (i + 6)     
+        checkPrime 5
         
 [<EntryPoint>]
 let main argv =
