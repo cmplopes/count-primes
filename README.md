@@ -15,7 +15,7 @@ In each language I implemented exactly the same algorithm that counts the number
 |Java      |4.6       |
 |Scala     |4.7       |
 |JavaScript|5.7       |
-|F#        |7.3       |
+|F#        |6.1       |
 |Julia     |13.3      | 
 |Go        |13.4      |
 |FreePascal|14.3      |
