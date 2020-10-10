@@ -4,15 +4,14 @@ public class Primes {
         int counter=0;
         int min = 0;
         int max = 20000000;
-        double startTime, endTime;  
        
-        System.out.println("Java 8");
+        System.out.println("Java " + java.lang.Runtime.version());
 
-        startTime = System.nanoTime();
+        double startTime = System.nanoTime();
         for (int num = min; num <= max; num++) {             
             if(IsPrime(num)) { counter = counter + 1; }
         }
-        endTime = System.nanoTime();
+        double endTime = System.nanoTime();
      
         System.out.println("Number of primes in the interval " + min + "," + max + "]: " + counter);
         System.out.println("Execution time: " + (endTime - startTime) / 1000000000 + " seconds");
