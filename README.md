@@ -34,4 +34,5 @@ In each language I implemented exactly the same algorithm that counts the number
 | Language      | Time (s) |
 |---------------|--------|
 | Java          |   0.21 |
+| C#            |   0.39  |
 | Python        | 13.9   |
