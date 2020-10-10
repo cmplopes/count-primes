@@ -4,7 +4,7 @@ These benchmarks compare performance characteristics of different programming la
 In each language I implemented exactly the same algorithm that counts the number of primes between 0 and 20000000.
 
 # The results are:
-| Language      | Time s |
+| Language      | Time (s) |
 |---------------|--------|
 | C#            |   3.9  |
 | C             |   3.95 |
@@ -32,7 +32,7 @@ In each language I implemented exactly the same algorithm that counts the number
 |---------------|--------|
 
 # Using Sieve of Eratosthenes:
-| Language      | Time s |
+| Language      | Time (s) |
 |---------------|--------|
 | Java          |   0.21 |
 |---------------|--------|
