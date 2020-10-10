@@ -6,7 +6,7 @@ In each language I implemented exactly the same algorithm that counts the number
 # The results are:
 | Language | Time (s) |
 |----------|----------|
-|Java 14   |3.7       |
+|Java 14   |3.78      |
 |C#        |3.9       |
 |C         |3.95      |
 |Intel Fortran|3.99   |
