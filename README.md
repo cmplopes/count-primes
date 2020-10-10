@@ -6,14 +6,13 @@ In each language I implemented exactly the same algorithm that counts the number
 # The results are:
 | Language | Time (s) |
 |----------|----------|
-|Java 14   |3.78      |
 |C#        |3.9       |
 |C         |3.95      |
 |Intel Fortran|3.99   |
 |Delphi    |4.25      |
 |C++       |4.3       |
 |gFortran  |4.3       |
-|Java 8    |4.6       |
+|Java      |4.6       |
 |Scala     |4.7       |
 |JavaScript|5.7       |
 |F#        |6.1       |
