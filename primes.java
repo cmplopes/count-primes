@@ -13,7 +13,7 @@ public class Primes {
         }
         double endTime = System.nanoTime();
      
-        System.out.println("Number of primes in the interval " + min + "," + max + "]: " + counter);
+        System.out.println("Number of primes in the interval [" + min + "," + max + "]: " + counter);
         System.out.println("Execution time: " + (endTime - startTime) / 1000000000 + " seconds");
 
     }
