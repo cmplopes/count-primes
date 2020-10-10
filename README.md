@@ -29,10 +29,8 @@ In each language I implemented exactly the same algorithm that counts the number
 | Perl          | 177    |
 | Tcl           | 214    |
 | R             | 402    |
-|---------------|--------|
 
 # Using Sieve of Eratosthenes:
 | Language      | Time (s) |
 |---------------|--------|
 | Java          |   0.21 |
-|---------------|--------|
