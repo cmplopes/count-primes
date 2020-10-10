@@ -28,7 +28,7 @@ def countprimes(minprime, maxprime):
 minprime = 0
 maxprime = 20000000
 
-print "Python"
+print("Python")
 
 start_time = time()
 
@@ -37,5 +37,5 @@ count = countprimes(minprime, maxprime)
 end_time = time()
 delta_time = end_time - start_time
 
-print "Number of primes in the interval [%d , %d]: %d" % (minprime, maxprime, count)
-print "Time elapsed: %r seconds" % delta_time
+print("Number of primes in the interval [%d , %d]: %d" % (minprime, maxprime, count))
+print("Time elapsed: %r seconds" % delta_time)

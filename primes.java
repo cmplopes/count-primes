@@ -4,7 +4,7 @@ public class Primes {
         int counter=0;
         int min = 0;
         int max = 20000000;
-       
+        
         System.out.println("Java " + java.lang.Runtime.version());
 
         double startTime = System.nanoTime();
